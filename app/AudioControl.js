@@ -8,6 +8,9 @@ class AudioControl {
         if (!this.element) throw new Error("Couldn't retrieve element with selector: " + selector);
         this.domElement = this.element[0];
         this.playList = null;
+
+        this.isSafari = (navigator.userAgent.indexOf("Safari") != -1) ? true : false ;
+
     }
 
     setPlayList(arrayOfURLs) {
@@ -27,11 +30,15 @@ class AudioControl {
     }
 
     increaseSpeed() {
-        this.domElement.playbackRate += .2;
+        if (!this.isSafari) {
+            this.domElement.playbackRate += .2;
+        }
     }
 
     resetSpeed() {
-        this.domElement.playbackRate = 1;
+        if (!this.isSafari) {
+            this.domElement.playbackRate = 1;
+        }
     }
 
     buzz () {

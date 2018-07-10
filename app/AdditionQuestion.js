@@ -7,9 +7,13 @@ class AdditionQuestion extends QuestionGenerator {
         super();
 
         if (max < 10) throw new Error("Max should be 10 or more to make actually useful questions.");
+        this.max = max;
+        this.reset();
+    }
 
-        const opLeft = this.getRandomWholeNumber(max);
-        const opRight = this.getRandomWholeNumber(max);
+    reset () {
+        const opLeft = this.getRandomWholeNumber(this.max);
+        const opRight = this.getRandomWholeNumber(this.max);
         this.answer = opLeft + opRight;
 
         this.problem = `${opLeft} + ${opRight} =`

@@ -9,6 +9,10 @@ class QuestionGenerator {
       return Math.floor(Math.random()*(max+1));
     }  
 
+    reset () {
+      throw new Error ("reset not implemented");
+    }
+
     getProblem () {
       throw new Error ("getProblem not implemented");
     }

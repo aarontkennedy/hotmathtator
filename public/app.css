@@ -9086,4 +9086,38 @@ ul.otherGames  {
   display: inline;
 }
 
+.centerText{
+  text-align:center;
+}
+
+.giantButton {
+  width: 50vw;
+  height: 25vw;
+  margin: 15vh auto 0 auto;
+  background-color: blue;
+  border: thin solid white;
+  border-radius: 2em;
+  color:white;    
+  display: flex;
+  text-align: center;
+  justify-content:center;
+  align-content:center;
+  flex-direction:column; 
+  font-size: 8vw;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.giantButton:hover {
+  background-color: darkblue;
+}
+
+.giantProblem, .giantAnswerInput {
+  font-size: 8vw;
+  font-weight: bolder;
+  padding: .25em;
+}
+
+
+
 /*# sourceMappingURL=app.css.map*/
