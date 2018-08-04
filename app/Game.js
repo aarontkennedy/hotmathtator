@@ -17,8 +17,9 @@ class Game {
         this.questionContainer = $("<span></span>").addClass("giantProblem");
         this.answerContainer = $(`<input type="text" size="4" maxlength="4">`).addClass("giantAnswerInput");
         this.checkButton = $(`<div>Check</div>`).addClass("giantButton");
-
         this.startButton = $("<div>Start!</div>").addClass("giantButton");
+        this.quitButton = $("<div>Quit</div>").addClass("giantButton");
+        this.playAgainButton = $("<div>Play Again</div>").addClass("giantButton");
 
         this.gameTimeout = null;
         this.changeBGColorInterval = null;
@@ -66,7 +67,7 @@ class Game {
             this.showQuestion();
         }
         else {
-            this.endGame(`${this.questions.getProblem()} ${this.questions.getAnswer()} - BURNED!`);
+            this.endGame(`${this.questions.getProblem()} ${this.questions.getAnswer()}`);
         }
     }
 
@@ -88,34 +89,39 @@ class Game {
     }
 
     endGame(message = null) {
+        
         clearTimeout(this.gameTimeout);
         clearInterval(this.changeBGColorInterval);
         clearInterval(this.changeAudioSpeedInterval);
 
         this.element.empty();
-        this.audio.playRandomSong();
+        this.audio.stop();
         this.backgroundColorControl.set("orange");
         if (message) {
             this.element.append($(`<h3>${message}</h3>`));
         }
         this.element.append($(`<h3>Burned!</h3>`));
 
+        this.quitButton.click(() => {
+            this.cleanUp();
+            this.backgroundColorControl.reset();
+            this.element.html(this.landingPageHTML);
+        });
+        this.playAgainButton.click(() => {
+            this.cleanUp();
+            this.start();
+        });
+        this.element.append(this.playAgainButton);
+        this.element.append(this.quitButton);
+
         this.audio.buzz();
     }
 
-
-
-
-
-
-    /*
-        $(gameContainerSelector).html(questionGenerator.getProblem());
-        backgroundColorControl.set("pink");
-        audio.playRandomSong();
-        setTimeout(function(){audio.increaseSpeed();}, 5000);
-        setTimeout(function(){audio.increaseSpeed();}, 10000);
-        setTimeout(function(){audio.increaseSpeed();}, 15000);
-        setTimeout(function(){audio.stop();audio.buzz();}, 20000);*/
+    cleanUp() {
+        this.quitButton.off();
+        this.playAgainButton.off();
+        this.element.empty();
+    }
 }
 
 

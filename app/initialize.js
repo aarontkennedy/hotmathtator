@@ -6,55 +6,51 @@ document.addEventListener('DOMContentLoaded', () => {
   const Game = require('Game');
   let game = null;
 
+  const sectionElement = $("section");
 
-
-  $("#addGame").click(function () {
+  sectionElement.on("click", "#addGame", () => {
     game = new Game(new AdditionQuestion());
   });
-  $("#addGameHarder").click(function () {
+  sectionElement.on("click", "#addGameHarder", () => {
     game = new Game(new AdditionQuestion(20));
   });
-  $("#subtractGame").click(function () {
+  sectionElement.on("click", "#subtractGame", () => {
     game = new Game(new AdditionQuestion());
   });
-  $("#subtractGameHarder").click(function () {
+  sectionElement.on("click", "#subtractGameHarder", () => {
     game = new Game(new AdditionQuestion(20));
   });
-  $("#multiplyGame").click(function () {
+  sectionElement.on("click", "#multiplyGame", () => {
     game = new Game(new AdditionQuestion());
   });
-  $("#multiplyGameHarder").click(function () {
+  sectionElement.on("click", "#multiplyGameHarder", () => {
     game = new Game(new AdditionQuestion(20));
   });
-  $("#divideGame").click(function () {
+  sectionElement.on("click", "#divideGame", () => {
     game = new Game(new AdditionQuestion());
   });
-  $("#divideGameHarder").click(function () {
+  sectionElement.on("click", "#divideGameHarder", () => {
     game = new Game(new AdditionQuestion(20));
   });
-  $("#randomGame").click(function () {
+  sectionElement.on("click", "#randomGame", () => {
     game = new Game(new AdditionQuestion());
   });
 
-  $("#intAddGame").click(function () {
+  sectionElement.on("click", "#intAddGame", () => {
     game = new Game(new AdditionQuestion());
   });
-  $("#intSubtractGame").click(function () {
+  sectionElement.on("click", "#intSubtractGame", () => {
     game = new Game(new AdditionQuestion());
   });
-  $("#intMultiplyGame").click(function () {
+  sectionElement.on("click", "#intMultiplyGame", () => {
     game = new Game(new AdditionQuestion());
   });
-  $("#intDivideGame").click(function () {
+  sectionElement.on("click", "#intDivideGame", () => {
     game = new Game(new AdditionQuestion());
   });
-  $("#integerGame").click(function () {
+  sectionElement.on("click", "#integerGame", () => {
     game = new Game(new AdditionQuestion());
   });
-
-
-
-
 
 
 });

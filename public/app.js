@@ -357,8 +357,9 @@ var Game = function () {
         this.questionContainer = $("<span></span>").addClass("giantProblem");
         this.answerContainer = $('<input type="text" size="4" maxlength="4">').addClass("giantAnswerInput");
         this.checkButton = $('<div>Check</div>').addClass("giantButton");
-
         this.startButton = $("<div>Start!</div>").addClass("giantButton");
+        this.quitButton = $("<div>Quit</div>").addClass("giantButton");
+        this.playAgainButton = $("<div>Play Again</div>").addClass("giantButton");
 
         this.gameTimeout = null;
         this.changeBGColorInterval = null;
@@ -412,7 +413,7 @@ var Game = function () {
                 this.questions.reset();
                 this.showQuestion();
             } else {
-                this.endGame(this.questions.getProblem() + ' ' + this.questions.getAnswer() + ' - BURNED!');
+                this.endGame(this.questions.getProblem() + ' ' + this.questions.getAnswer());
             }
         }
     }, {
@@ -445,32 +446,44 @@ var Game = function () {
     }, {
         key: 'endGame',
         value: function endGame() {
+            var _this6 = this;
+
             var message = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+
 
             clearTimeout(this.gameTimeout);
             clearInterval(this.changeBGColorInterval);
             clearInterval(this.changeAudioSpeedInterval);
 
             this.element.empty();
-            this.audio.playRandomSong();
+            this.audio.stop();
             this.backgroundColorControl.set("orange");
             if (message) {
                 this.element.append($('<h3>' + message + '</h3>'));
             }
             this.element.append($('<h3>Burned!</h3>'));
 
+            this.quitButton.click(function () {
+                _this6.cleanUp();
+                _this6.backgroundColorControl.reset();
+                _this6.element.html(_this6.landingPageHTML);
+            });
+            this.playAgainButton.click(function () {
+                _this6.cleanUp();
+                _this6.start();
+            });
+            this.element.append(this.playAgainButton);
+            this.element.append(this.quitButton);
+
             this.audio.buzz();
         }
-
-        /*
-            $(gameContainerSelector).html(questionGenerator.getProblem());
-            backgroundColorControl.set("pink");
-            audio.playRandomSong();
-            setTimeout(function(){audio.increaseSpeed();}, 5000);
-            setTimeout(function(){audio.increaseSpeed();}, 10000);
-            setTimeout(function(){audio.increaseSpeed();}, 15000);
-            setTimeout(function(){audio.stop();audio.buzz();}, 20000);*/
-
+    }, {
+        key: 'cleanUp',
+        value: function cleanUp() {
+            this.quitButton.off();
+            this.playAgainButton.off();
+            this.element.empty();
+        }
     }]);
 
     return Game;
@@ -550,47 +563,49 @@ document.addEventListener('DOMContentLoaded', function () {
   var Game = require('Game');
   var game = null;
 
-  $("#addGame").click(function () {
+  var sectionElement = $("section");
+
+  sectionElement.on("click", "#addGame", function () {
     game = new Game(new AdditionQuestion());
   });
-  $("#addGameHarder").click(function () {
+  sectionElement.on("click", "#addGameHarder", function () {
     game = new Game(new AdditionQuestion(20));
   });
-  $("#subtractGame").click(function () {
+  sectionElement.on("click", "#subtractGame", function () {
     game = new Game(new AdditionQuestion());
   });
-  $("#subtractGameHarder").click(function () {
+  sectionElement.on("click", "#subtractGameHarder", function () {
     game = new Game(new AdditionQuestion(20));
   });
-  $("#multiplyGame").click(function () {
+  sectionElement.on("click", "#multiplyGame", function () {
     game = new Game(new AdditionQuestion());
   });
-  $("#multiplyGameHarder").click(function () {
+  sectionElement.on("click", "#multiplyGameHarder", function () {
     game = new Game(new AdditionQuestion(20));
   });
-  $("#divideGame").click(function () {
+  sectionElement.on("click", "#divideGame", function () {
     game = new Game(new AdditionQuestion());
   });
-  $("#divideGameHarder").click(function () {
+  sectionElement.on("click", "#divideGameHarder", function () {
     game = new Game(new AdditionQuestion(20));
   });
-  $("#randomGame").click(function () {
+  sectionElement.on("click", "#randomGame", function () {
     game = new Game(new AdditionQuestion());
   });
 
-  $("#intAddGame").click(function () {
+  sectionElement.on("click", "#intAddGame", function () {
     game = new Game(new AdditionQuestion());
   });
-  $("#intSubtractGame").click(function () {
+  sectionElement.on("click", "#intSubtractGame", function () {
     game = new Game(new AdditionQuestion());
   });
-  $("#intMultiplyGame").click(function () {
+  sectionElement.on("click", "#intMultiplyGame", function () {
     game = new Game(new AdditionQuestion());
   });
-  $("#intDivideGame").click(function () {
+  sectionElement.on("click", "#intDivideGame", function () {
     game = new Game(new AdditionQuestion());
   });
-  $("#integerGame").click(function () {
+  sectionElement.on("click", "#integerGame", function () {
     game = new Game(new AdditionQuestion());
   });
 });
