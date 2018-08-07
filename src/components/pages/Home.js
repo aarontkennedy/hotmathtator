@@ -26,7 +26,7 @@ class Home extends Component {
                                 </ol>
                             </figure>
 
-                            <h4 className="text-center">Do you have the skills and luck to not get BURNED?</h4>
+                            <h4 className="text-center">Do you have the skills and luck to not get <span className="flamingTextSecond">BURNED?</span></h4>
                         </div>
 
                         <div className="cell medium-5 large-4 columns Home-Columns">

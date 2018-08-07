@@ -12,7 +12,8 @@ class DivisionQuestion extends QuestionGenerator {
     }
 
     reset () {
-        const opRight = this.getRandomWholeNumber(this.max);
+        let opRight = this.getRandomWholeNumber(this.max);
+        opRight = opRight ? opRight : 1;
         this.answer = this.getRandomWholeNumber(this.max);
         const opLeft = this.answer*opRight;
 

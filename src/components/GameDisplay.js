@@ -17,13 +17,18 @@ class GameDisplay extends Component {
         problemText: null
     };
 
-    componentWillMount() {
+    componentDidMount() {
         this.audio = new AudioControl("#gameSound");
         this.audio.setPlayList(["/songs/gallowsPole.mp3",
             "/songs/tomDula.mp3"]);
 
         document.onkeyup = (e) => this.handleKeyPress(e);
         this.question = new this.props.questionGenerator();
+        this.startGame();
+    }
+
+    // they deprecated this lifecycle function, but it so perfect for this...
+    componentWillReceiveProps() {
         this.startGame();
     }
 
@@ -110,6 +115,10 @@ class GameDisplay extends Component {
         clearTimeout(this.gameTimeout);
         this.audio.stop();
         this.setState({ isGameOver: true,  gameTimedOut: timedOut});
+    }
+
+    componentWillUnmount() {
+        this.gameOver();
     }
 
     render() {
