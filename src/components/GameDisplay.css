@@ -1,0 +1,11 @@
+.GameDisplay {
+    margin-top: 1rem;
+}
+
+.GameDisplay label {
+    display: inline-block;
+}
+
+.Go-Button {
+    font-weight: bolder;
+}

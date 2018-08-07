@@ -1,0 +1,6 @@
+.CalculatorInputButton {
+    display: inline-block;
+    margin: 0 1% 1% 0;
+    width: 30%;
+    font-weight: bolder;
+}

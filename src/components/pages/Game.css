@@ -1,0 +1,21 @@
+.Game {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+}
+
+.Game header {
+    flex-shrink: 0  ;
+}
+
+.Game section {
+    flex: 1 0 auto;
+}
+
+.Home-Content {
+    flex: 1 0 auto; /* Use 1 0 auto instead of just 1 for backwards compatibility with other browsers */
+}
+
+.Game section {
+    flex: 1 0 auto; /* Use 1 0 auto instead of just 1 for backwards compatibility with other browsers */
+}

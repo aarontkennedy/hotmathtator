@@ -1,0 +1,31 @@
+.Home {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+}
+
+.Home header {
+    flex-shrink: 0  ;
+}
+
+.Home section {
+    flex: 1 0 auto;
+}
+
+.Home footer {
+    flex-shrink: 0;
+}  
+
+.Home-Content {
+    flex: 1 0 auto; /* Use 1 0 auto instead of just 1 for backwards compatibility with other browsers */
+}
+
+.Home-Info {
+    background-color: rgb(245, 245, 245);
+    border-radius: 1rem;
+}
+
+.Home-Columns {
+    margin-top: 2rem;
+}
+

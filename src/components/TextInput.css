@@ -1,0 +1,10 @@
+.TextInput {
+    display: inline-block;
+    height: 5rem;
+    font-size: 3rem;
+    font-weight: bold;
+    width: 10rem;
+    margin-top: 1rem;
+    color: transparent;
+    text-shadow: 0 0 0 black;
+}

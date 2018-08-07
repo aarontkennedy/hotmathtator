@@ -1,25 +1,22 @@
 {
-  "name": "brunch-app",
-  "description": "Brunch.io application",
+  "name": "client",
+  "version": "0.1.0",
   "private": true,
-  "author": "Brunch",
-  "version": "0.0.1",
-  "repository": "",
-  "scripts": {
-    "start": "brunch watch --server",
-    "build": "brunch build --production"
-  },
   "dependencies": {
-    "bootstrap": "^4.1.1",
+    "@fortawesome/fontawesome-svg-core": "^1.2.0-14",
+    "@fortawesome/free-solid-svg-icons": "^5.1.0-11",
+    "@fortawesome/react-fontawesome": "0.1.0-11",
+    "foundation-sites": "^6.5.0-rc.2",
     "jquery": "^3.3.1",
-    "popper.js": "^1.14.3"
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "1.1.4"
   },
-  "devDependencies": {
-    "auto-reload-brunch": "^2",
-    "babel-brunch": "~6.0",
-    "babel-preset-latest": "^6",
-    "brunch": "^2",
-    "clean-css-brunch": "^2",
-    "uglify-js-brunch": "^2"
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   }
 }
