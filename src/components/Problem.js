@@ -5,7 +5,7 @@ class Problem extends Component {
 
     render() {
         return (
-            <span className="Problem">
+            <span className="h1 Problem">
             {this.props.problem}
             </span>
         );
