@@ -23,16 +23,15 @@ class GameDisplay extends Component {
             "/songs/tomDula.mp3"]);
 
         document.onkeyup = (e) => this.handleKeyPress(e);
-        this.question = new this.props.questionGenerator();
         this.startGame();
     }
 
-    // they deprecated this lifecycle function, but it so perfect for this...
     componentWillReceiveProps() {
         this.startGame();
     }
 
     startGame = () => {
+        this.question = new this.props.questionGenerator();
         this.audio.playRandomSong();
         this.changeAudioSpeedInterval = setInterval(() => {
             this.audio.increaseSpeed();
@@ -145,6 +144,7 @@ class GameDisplay extends Component {
                 {this.state.isGameOver ?
                     <BurnedModal
                         message={this.state.gameTimedOut ? "Time's Up!" : this.question.getSolutionString()}
+                        additionalInfo={this.state.gameTimedOut ? "" : this.question.getSolutionHelp()}
                         handlePlayAgain={this.startGame} />
                     : ""}
             </div>

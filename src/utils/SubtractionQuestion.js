@@ -23,9 +23,8 @@ class SubtractionQuestion extends QuestionGenerator {
         return this.problem;
     }
 
-    // overried to provide a more thorough solution description
-    getSolutionString() {
-        return this.getProblem() + " " + this.getAnswer();
+    getSolutionHelp() {
+        return "Count Down!";
     }
 }
 

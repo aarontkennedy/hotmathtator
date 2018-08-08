@@ -11,12 +11,6 @@ class AddIntegersQuestion extends QuestionGenerator {
         this.reset();
     }
 
-    randomPositiveNegative1 () {
-        const one = this.getRandomWholeNumber(1);
-        if (one) return 1;
-        return -1;
-    }
-
     reset () {
         const opLeft = this.randomPositiveNegative1()*this.getRandomWholeNumber(this.max);
         const opRight = this.randomPositiveNegative1()*this.getRandomWholeNumber(this.max);
@@ -32,9 +26,9 @@ class AddIntegersQuestion extends QuestionGenerator {
         return this.problem;
     }
 
-    // overried to provide a more thorough solution description
-    getSolutionString() {
-        let s = this.getProblem() + " " + this.getAnswer() + " ";
+    // override to provide a more thorough solution description
+    getSolutionHelp() {
+        let s = "";
         if (this.hasAZeroOp) {
             s += "Adding 0 doesn't change a number!"
         }

@@ -11,11 +11,7 @@ class Footer extends Component {
             <a href="http://aarontkennedy.github.io">Aaron Kennedy</a>
           </li>
           <li>
-            GitHub
-            <a href="http://aarontkennedy.github.io">Aaron Kennedy</a>
-          </li>
-          <li>
-            <a href="">Donate</a>
+            <a href="https://github.com/aarontkennedy/hotmathtator"> GitHub</a>
           </li>
           <li>Music by </li>
         </ul>

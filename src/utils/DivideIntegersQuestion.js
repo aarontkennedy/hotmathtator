@@ -14,9 +14,8 @@ class DivideIntegersQuestion extends MultiplyIntegersQuestion {
         this.problem = `${opLeft} ÷ ${opRight} =`
     }
 
-    // overried to provide a more thorough solution description
-    getSolutionString() {
-        let s = this.getProblem() + " " + this.getAnswer() + " ";
+    getSolutionHelp() {
+        let s = "";
         if (this.hasAZeroOp) {
             s += "0 divided by anythign is 0!"
         }

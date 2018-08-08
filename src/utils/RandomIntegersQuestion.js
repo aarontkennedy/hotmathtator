@@ -1,10 +1,10 @@
 import QuestionGenerator from "./QuestionGenerator";
-import DivisionQuestion from "./DivisionQuestion";
-import AdditionQuestion from "./AdditionQuestion";
-import SubtractionQuestion from "./SubtractionQuestion";
-import MultiplicationQuestion from "./MultiplicationQuestion";
+import DivideIntegersQuestion from "./DivideIntegersQuestion";
+import AddIntegersQuestion from "./AddIntegersQuestion";
+import SubtractIntegersQuestion from "./SubtractIntegersQuestion";
+import MultiplyIntegersQuestion from "./MultiplyIntegersQuestion";
 
-class RandomFactQuestion extends QuestionGenerator {
+class RandomIntegersQuestion extends QuestionGenerator {
     constructor(max = 11) {
         // Note: In derived classes, super() must be called before you
         // can use 'this'. Leaving this out will cause a reference error.
@@ -14,10 +14,10 @@ class RandomFactQuestion extends QuestionGenerator {
         this.max = max;
 
         this.arrayOfQuestionBanks = [
-            new AdditionQuestion(this.max),
-            new SubtractionQuestion(this.max),
-            new MultiplicationQuestion(this.max),
-            new DivisionQuestion(this.max)
+            new AddIntegersQuestion(this.max),
+            new SubtractIntegersQuestion(this.max),
+            new MultiplyIntegersQuestion(this.max),
+            new DivideIntegersQuestion(this.max)
         ];
 
         this.currentQuestion = this.arrayOfQuestionBanks[0];
@@ -48,4 +48,4 @@ class RandomFactQuestion extends QuestionGenerator {
     }
 }
 
-export default RandomFactQuestion;
+export default RandomIntegersQuestion;

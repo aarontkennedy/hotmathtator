@@ -1,34 +1,45 @@
 class QuestionGenerator {
-  
-    constructor() {
-      this.answer=null;
-    }
 
-    // min and max are inclusive
-    getRandomWholeNumber (max=10) {
-      return Math.floor(Math.random()*(max+1));
-    }  
+  constructor() {
+    this.answer = null;
+  }
 
-    reset () {
-      throw new Error ("reset not implemented");
-    }
+  // min and max are inclusive
+  getRandomWholeNumber(max = 10) {
+    return Math.floor(Math.random() * (max + 1));
+  }
 
-    getProblem () {
-      throw new Error ("getProblem not implemented");
-    }
+  reset() {
+    throw new Error("reset not implemented");
+  }
 
-    isCorrectAnswer (answer) {
-      return answer === this.answer;
-    }
+  getProblem() {
+    throw new Error("getProblem not implemented");
+  }
 
-    getAnswer () {
-      return this.answer;
-    }
+  isCorrectAnswer(answer) {
+    return answer === this.answer;
+  }
 
-    // overried to provide a more thorough solution description
-    getSolutionString () {
-      return this.answer;
-    }
+  getAnswer() {
+    return this.answer;
+  }
+
+  getSolutionString() {
+    return this.getProblem() + " " + this.getAnswer();
+  }
+
+  // override to provide a more thorough solution description
+  getSolutionHelp() {
+    throw new Error("getSolutionHelp not implemented");
+  }
+
+  randomPositiveNegative1() {
+    const one = this.getRandomWholeNumber(1);
+    if (one) return 1;
+    return -1;
+  }
+
 }
 
 export default QuestionGenerator;

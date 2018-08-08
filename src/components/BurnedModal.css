@@ -1,9 +1,9 @@
 .BurnedModal {
     position:fixed;
-    width:80vw;
-    height: 90vh;
-    top:10vh;
-    left:10vw;
+    width:90vw;
+    height: 95vh;
+    top:5vh;
+    left:5vw;
     background-color: orange;
     border-radius: .25rem;
 

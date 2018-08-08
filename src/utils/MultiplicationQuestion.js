@@ -12,20 +12,19 @@ class MultiplicationQuestion extends QuestionGenerator {
     }
 
     reset () {
-        const opLeft = this.getRandomWholeNumber(this.max);
-        const opRight = this.getRandomWholeNumber(this.max);
-        this.answer = opLeft * opRight;
+        this.opLeft = this.getRandomWholeNumber(this.max);
+        this.opRight = this.getRandomWholeNumber(this.max);
+        this.answer = this.opLeft * this.opRight;
 
-        this.problem = `${opLeft} x ${opRight} =`
+        this.problem = `${this.opLeft} x ${this.opRight} =`
     }
 
     getProblem() {
         return this.problem;
     }
 
-    // overried to provide a more thorough solution description
-    getSolutionString() {
-        return this.getProblem() + " " + this.getAnswer();
+    getSolutionHelp() {
+        return "Skip count by "+this.opLeft+".";
     }
 }
 

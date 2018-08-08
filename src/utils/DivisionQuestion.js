@@ -12,21 +12,20 @@ class DivisionQuestion extends QuestionGenerator {
     }
 
     reset () {
-        let opRight = this.getRandomWholeNumber(this.max);
-        opRight = opRight ? opRight : 1;
+        this.opRight = this.getRandomWholeNumber(this.max);
+        this.opRight = this.opRight ? this.opRight : 1;
         this.answer = this.getRandomWholeNumber(this.max);
-        const opLeft = this.answer*opRight;
+        this.opLeft = this.answer*this.opRight;
 
-        this.problem = `${opLeft} ÷ ${opRight} =`
+        this.problem = `${this.opLeft} ÷ ${this.opRight} =`
     }
 
     getProblem() {
         return this.problem;
     }
 
-    // overried to provide a more thorough solution description
-    getSolutionString() {
-        return this.getProblem() + " " + this.getAnswer();
+    getSolutionHelp() {
+        return `Skip count by ${this.opRight} till you get to ${this.opLeft}.`;
     }
 }
 
