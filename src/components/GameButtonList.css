@@ -1,6 +1,18 @@
+.GameButtonList a {
+    margin: 0;
+}
+
 .GameButtonList li {
     display: inline-block;
     list-style: none;
-    padding: .25rem .25rem 0 0;
-    margin: .25rem .25rem 0 0;
+    padding: .3rem;
+}
+
+@media only screen and (max-width: 600px) {
+    .GameButtonList li {
+        padding: .1rem;
+    }
+    .GameButtonList a {
+        padding: .5rem;
+    }
 }
