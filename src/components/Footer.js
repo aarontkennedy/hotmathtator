@@ -13,7 +13,7 @@ class Footer extends Component {
           <li>
             <a href="https://github.com/aarontkennedy/hotmathtator" target="_blank" rel="noopener noreferrer"> GitHub</a>
           </li>
-          <li>Music by <a href="http://rapternal.com" target="_blank" rel="noopener noreferrer">rapternal.com</a></li>
+          <li>Music from <a href="http://rapternal.com" target="_blank" rel="noopener noreferrer">rapternal.com</a></li>
         </ul>
       </footer >);
   }

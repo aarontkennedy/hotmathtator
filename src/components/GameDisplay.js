@@ -36,7 +36,7 @@ class GameDisplay extends Component {
         this.audio.playRandomSong();
         this.changeAudioSpeedInterval = setInterval(() => {
             this.audio.increaseSpeed();
-        }, 7000);
+        }, 10000);
 
         const seconds = 30 + this.question.getRandomWholeNumber(15);
         this.gameTimeout = setTimeout(() => { this.timeUp() }, seconds * 1000);
@@ -111,15 +111,19 @@ class GameDisplay extends Component {
     }
 
     gameOver(timedOut = false) {
-        clearInterval(this.changeAudioSpeedInterval);
-        clearTimeout(this.gameTimeout);
-        this.audio.stop();
+        this.cleanUp();
         this.audio.buzz();
         this.setState({ isGameOver: true,  gameTimedOut: timedOut});
     }
 
+    cleanUp() {
+        clearInterval(this.changeAudioSpeedInterval);
+        clearTimeout(this.gameTimeout);
+        this.audio.stop();
+    }
+
     componentWillUnmount() {
-        this.gameOver();
+        this.cleanUp();
     }
 
     render() {

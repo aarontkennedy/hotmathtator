@@ -1,4 +1,8 @@
 
+
+const { detect } = require('detect-browser');
+const browser = detect();
+ 
 let $ = require('jquery');
 
 class AudioControl {
@@ -8,8 +12,10 @@ class AudioControl {
         if (!this.element) throw new Error("Couldn't retrieve element with selector: " + selector);
         this.domElement = this.element[0];
         this.playList = null;
-
-        this.isSafari = (navigator.userAgent.indexOf("Safari") !== -1) ? true : false;
+        // for some reason, safari can't handle speeding up the 
+        // audio - gross.
+        console.log(browser.name);
+        this.isSafari = (("safari") === browser.name.toLowerCase()) ? true : false;
 
     }
 
