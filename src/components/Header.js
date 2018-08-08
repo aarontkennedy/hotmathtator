@@ -4,8 +4,13 @@ import './Header.css';
 
 class Header extends Component {
   render() {
+    let classes = "grid-x grid-padding-x ";
+    if (this.props.gameMode) {
+      classes += " show-for-medium";
+    }
+
     return (
-      <header className="show-for-medium grid-x grid-padding-x">
+      <header className={classes}>
         <h3 className="cell">
           <img className="Header-icon" alt="Hot Mathtator" src="/images/hotTator.gif" />
           <Link to="/" className="Header-title" > Hot Mathtator!</Link>

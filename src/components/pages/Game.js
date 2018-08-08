@@ -22,7 +22,7 @@ class Game extends Component {
     render() {
         return (
             <div className="Game">
-                <Header />
+                <Header  gameMode={true}/>
                 <BackgroundColorChangeSection gameOver={false} interval={5000}>
                     { !this.state.isGameStarted ?
                     <BigGameStartButton onClick={this.handleStartGameClick} />

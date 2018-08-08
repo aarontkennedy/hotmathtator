@@ -8,7 +8,7 @@ class Home extends Component {
     render() {
         return (
             <div className="Home">
-                <Header />
+                <Header gameMode={false}/>
 
                 <section className="grid-container">
                     <div className="grid-x grid-margin-x grid-padding-x">

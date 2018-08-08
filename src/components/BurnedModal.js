@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 import './BurnedModal.css';
 import GameButtonList from "./GameButtonList";
 
@@ -9,7 +10,10 @@ class BurnedModal extends Component {
                 <h1>You Got <span className="flamingTextSecond">BURNED!</span></h1>
                 <h2>{this.props.message}</h2>
                 <h3>{this.props.additionalInfo}</h3>
-                <button className="button large" onClick={this.props.handlePlayAgain}>Play again?</button>
+                <div>
+                    <button className="button large" onClick={this.props.handlePlayAgain}>Play Again</button>
+                    <Link to="/" > cancel</Link>
+                </div>
                 <GameButtonList />
             </div>);
     }
