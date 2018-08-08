@@ -8,7 +8,7 @@ class Footer extends Component {
         <ul>
           <li>
             Hot Mathtator by
-            <a href="http://aarontkennedy.github.io" target="_blank" rel="noopener noreferrer">Aaron Kennedy</a>
+            <a href="http://aarontkennedy.github.io" target="_blank" rel="noopener noreferrer"> Aaron Kennedy</a>
           </li>
           <li>
             <a href="https://github.com/aarontkennedy/hotmathtator" target="_blank" rel="noopener noreferrer"> GitHub</a>
