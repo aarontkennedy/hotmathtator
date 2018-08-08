@@ -5,7 +5,7 @@ import './Header.css';
 class Header extends Component {
   render() {
     return (
-      <header className="grid-x grid-padding-x">
+      <header className="show-for-medium grid-x grid-padding-x">
         <h3 className="cell">
           <img className="Header-icon" alt="Hot Mathtator" src="/images/hotTator.gif" />
           <Link to="/" className="Header-title" > Hot Mathtator!</Link>
