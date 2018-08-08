@@ -9,7 +9,7 @@ class AudioControl {
         this.domElement = this.element[0];
         this.playList = null;
 
-        this.isSafari = (navigator.userAgent.indexOf("Safari") !== -1) ? true : false ;
+        this.isSafari = (navigator.userAgent.indexOf("Safari") !== -1) ? true : false;
 
     }
 
@@ -20,7 +20,9 @@ class AudioControl {
     playRandomSong() {
         if (!this.playList) throw new Error("playList not set!");
 
-        this.element.attr("src", this.playList[Math.floor(Math.random()*(this.playList.length))]);
+        this.element.attr("src", this.playList[Math.floor(Math.random() * (this.playList.length))]);
+
+        this.resetSpeed();
 
         this.domElement.play();
     }
@@ -41,9 +43,9 @@ class AudioControl {
         }
     }
 
-    buzz () {
+    buzz() {
         this.stop();
-        this.element.attr("src", "songs/outOfTimeZap.mp3");
+        this.element.attr("src", "/songs/outOfTimeZap.mp3");
         this.domElement.play();
     }
 }

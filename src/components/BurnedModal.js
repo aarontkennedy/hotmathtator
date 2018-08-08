@@ -11,7 +11,7 @@ class BurnedModal extends Component {
                 <h2>{this.props.message}</h2>
                 <h3>{this.props.additionalInfo}</h3>
                 <div>
-                    <button className="button large" onClick={this.props.handlePlayAgain}>Play Again</button>
+                    <button className="button large success" onClick={this.props.handlePlayAgain}>Play Again</button>
                     <Link to="/" > cancel</Link>
                 </div>
                 <GameButtonList />

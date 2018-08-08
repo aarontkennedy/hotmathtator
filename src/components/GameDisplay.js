@@ -19,8 +19,9 @@ class GameDisplay extends Component {
 
     componentDidMount() {
         this.audio = new AudioControl("#gameSound");
-        this.audio.setPlayList(["/songs/gallowsPole.mp3",
-            "/songs/tomDula.mp3"]);
+        this.audio.setPlayList(["/songs/rootsSmall.mp3",
+            "/songs/moveAndShakeSmall.mp3",
+            "/songs/thunderClapSmall.mp3"]);
 
         document.onkeyup = (e) => this.handleKeyPress(e);
         this.startGame();
@@ -37,7 +38,7 @@ class GameDisplay extends Component {
             this.audio.increaseSpeed();
         }, 7000);
 
-        const seconds = 15 + this.question.getRandomWholeNumber(15);
+        const seconds = 30 + this.question.getRandomWholeNumber(15);
         this.gameTimeout = setTimeout(() => { this.timeUp() }, seconds * 1000);
 
         this.nextQuestion();
@@ -113,6 +114,7 @@ class GameDisplay extends Component {
         clearInterval(this.changeAudioSpeedInterval);
         clearTimeout(this.gameTimeout);
         this.audio.stop();
+        this.audio.buzz();
         this.setState({ isGameOver: true,  gameTimedOut: timedOut});
     }
 

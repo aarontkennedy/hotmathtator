@@ -8,12 +8,12 @@ class Footer extends Component {
         <ul>
           <li>
             Hot Mathtator by
-            <a href="http://aarontkennedy.github.io">Aaron Kennedy</a>
+            <a href="http://aarontkennedy.github.io" target="_blank" rel="noopener noreferrer">Aaron Kennedy</a>
           </li>
           <li>
-            <a href="https://github.com/aarontkennedy/hotmathtator"> GitHub</a>
+            <a href="https://github.com/aarontkennedy/hotmathtator" target="_blank" rel="noopener noreferrer"> GitHub</a>
           </li>
-          <li>Music by </li>
+          <li>Music by <a href="http://rapternal.com" target="_blank" rel="noopener noreferrer">rapternal.com</a></li>
         </ul>
       </footer >);
   }
